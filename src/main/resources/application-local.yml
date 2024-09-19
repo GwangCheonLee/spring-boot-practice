@@ -1,0 +1,32 @@
+spring:
+  config:
+    import: optional:file:env/.env.local[.properties]
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: ${DATABASE_DRIVER}
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  devtools:
+    livereload:
+      enabled: true
+
+server:
+  port: ${SERVER_PORT}
+
+logging:
+  level:
+    root: info
+    com.example: info
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
