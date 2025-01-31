@@ -25,6 +25,16 @@ logging:
     root: info
     com.example: info
 
+  file:
+    name: ${LOG_PATH:logs}/server.log  # 로그 파일 저장 경로 및 기본 파일명 지정
+
+  logback:
+    rollingpolicy:
+      file-name-pattern: ${LOG_PATH:logs}/server-%d{yyyy-MM-dd}.%i.log.gz  # 날짜별 로그 파일 압축 저장
+      max-history: 0  # 로그 파일 무제한 보관
+      max-file-size: 10MB  # 로그 파일이 10MB 이상이면 새로운 파일 생성
+      total-size-cap: 0  # 전체 로그 크기 제한 없음
+
 management:
   endpoints:
     web:
