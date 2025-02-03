@@ -48,6 +48,9 @@ dependencies {
     // Development Tools
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
+    // 테스트용 인메모리 DB
+    testRuntimeOnly "com.h2database:h2"
+
     // Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
